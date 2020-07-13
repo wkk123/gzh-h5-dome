@@ -1,0 +1,32 @@
+@import '@/assets/css/main.scss';
+.container{
+  @include location();
+  @include flexStyle(row,center,center,'');
+  .center_box{
+    @include flexStyle(column, center, center, '');
+    .center_img{
+      @include wh(130px,130px);
+      @include pStyle(bottom,10px);
+    }
+    .center_describe{
+      @include sc(14px);
+    }
+    .center_btn{
+      @include pStyle(top,50px);
+      @include flexStyle(row,center,center,'');
+      .btn_item{
+        @include wh(120px,36px);
+        @include sc(16px, $fontwhite,400,center);
+        line-height:34px;
+        border:1px solid $font-primary;
+        border-radius: 36px;
+        background-color: $font-primary;
+      }
+      .btn_item:first-child{
+        @include sc(16px, $font-primary);
+        background-color: $fontwhite;
+        @include mStyle(right,50px);
+      }
+    }
+  }
+}

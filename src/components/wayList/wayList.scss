@@ -1,0 +1,56 @@
+@import '@/assets/css/main.scss';
+.way_popup{
+  @include wh(100%,auto,$bg-color-base);
+  .popup_hearde{
+    @include wh(100%,48px);
+    @include bStyle(bottom);
+    @include flexStyle(row,space-between,center,'');
+    padding: 0 15px;
+    .hearde_tiem{
+      @include wh(22px,22px);
+      background-repeat: no-repeat;
+      background-size: cover;
+      &.close{
+        background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/close.png');
+      }
+      &.goBack{
+        background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/goback.png');
+      }
+    }
+    .hearde_title{
+      @include sc(18px);
+    }
+  }
+  .popup_center{
+    @include wh(100%,345px);
+    .way_list{
+      @include wh(100%,auto);
+      padding: 0 15px;
+      @include bStyle();
+      .list_item{
+        @include wh(100%,auto);
+        @include flexStyle(row,space-between,center,'');
+        padding: 14px 0px;
+        .item_left{
+          @include flexStyle(row,flex-start,center,'');
+          .left_icon{
+            @include wh(40px,40px);
+          }
+        }
+        .left_info{
+          @include mStyle(left,15px);
+          @include flexStyle(column,center,flex-start,'');
+        }
+        .item_radio{
+          @include wh(22px,22px);
+        }
+      }
+    }
+    .font3{
+      @include sc(16px,$font333);
+    }
+    .font9{
+      @include sc(14px,$font999);
+    }
+  }
+}

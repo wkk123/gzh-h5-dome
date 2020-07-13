@@ -1,0 +1,56 @@
+@import '@/assets/css/main.scss';
+.tradingInfo_container{
+  @include location();
+  @include wh(100%,100%,$bg-base);
+  padding:15px;
+  .tradingInfo_box{
+    padding:15px;
+    @include wh(100%,auto,$bg-color-base);
+    border-radius: 15px;
+  }
+  .Info_money{
+    @include wh(100%,auto);
+    @include flexStyle(column,center,center,'');
+    .money_Num{
+      @include sc(30px,$font333,500);
+      line-height: 42px;
+    }
+    .money_explain{
+      @include sc(14px,$font999);
+      line-height: 18px;
+    }
+    .money_icon{
+      @include wh(100%,auto);
+      @include flexStyle(row,space-between,center,'');
+      @include pStyle(bottom,15px);
+      @include mStyle(top,-15px);
+      @include bStyle(bottom,$border,1px,dashed);
+      .icon_left{
+        @include wh(15px,30px,$bg-base);
+        border-top-right-radius: 15px;
+        border-bottom-right-radius: 15px;
+        @include mStyle(left,-15px);
+      }
+      .icon_right{
+        @include wh(15px,30px,$bg-base);
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        @include mStyle(right,-15px);
+      }
+    }
+  }
+  .info_list{
+    @include wh(100%,auto);
+    .list_item{
+      @include flexStyle(row,space-between,center,'');
+      @include sc(16px);
+      line-height: 40px;
+      .item_word{
+        @include sc(16px,$font333,400,right);
+        @include wh(240px,auto);
+        line-height: 20px;
+        word-wrap:break-word
+      }
+    }
+  }  
+}

@@ -1,0 +1,28 @@
+@import '@/assets/css/main.scss';
+.buyCard_container{
+  @include location();
+  @include wh(100%,100%,$bg-color-base);
+  .buyCard_box{
+    padding: 15px;
+    .buyCard_noData{
+      @include wh(100%,100px);
+      background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/mine/card.svg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      overflow: hidden;
+      @include sc(20px,$fontwhite,500);
+      @include flexStyle(row,center,center,'');
+    }
+    .buyCard_explain{
+      @include sc(12px);
+      padding:10px;
+    }
+    .buyCard_money{
+      @include wh(100%,auto);
+      border:1px solid $border;
+      border-radius: 10px;
+      padding: 15px 0 5px;
+    }
+  }
+}

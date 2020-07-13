@@ -1,0 +1,51 @@
+@import '@/assets/css/main.scss';
+@keyframes move {
+  100% {
+    transform: rotate(720deg);
+  }
+}
+.loading_container{
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.1);
+  @include flexStyle(column,center,center,'');
+  .loading{
+    @include wh(100px,auto,$bg-color-base);
+    @include flexStyle(column,center,center,'');
+    border-radius: 5px;
+    .loading_title{
+      @include sc(16px);
+      @include pStyle(bottom,10px);
+    }
+  }
+}
+.loading_box{
+  @include wh(80px, 80px);
+  position: relative;
+  animation: move 3s linear infinite;
+  .load_item{
+    @include wh(20px,20px);
+    border-radius: 50%;
+    position: absolute;
+    &:nth-child(1){
+      background-color: #976ff7;
+      top: 15px;
+      right: 20px;
+    }
+    &:nth-child(2){
+      background-color: #5262f7;
+      right: 15px;
+      top: 40px;
+    }
+    &:nth-child(3){
+      background-color: #f5c24c;
+      bottom: 15px;
+      left: 20px;
+    }
+    &:nth-child(4){
+      background-color: #ea6a3a;
+      left: 15px;
+      top: 20px;
+    }
+  }
+}

@@ -1,0 +1,27 @@
+@import '@/assets/css/main.scss';
+@import './../../assets/iconfont/iconfont.css';
+.footer_container{
+  @include location(fixed,auto);
+  @include wh(100%, 50px, $bg-color-base);
+  @include flexStyle(row);
+  box-shadow:1px 0px 6px 0px rgba(173,173,173,0.41);
+  .guide_item {
+    flex: 1;
+    @include flexStyle(column);
+    .spec_text{
+      @include sc(10px, $font666);
+    }
+    .icon-style{
+      @include sc(20px, $font666);
+    }
+    &.active{
+      .icon-style{
+        @include sc(20px, $fontblue);
+      }
+      .spec_text{
+        @include sc(10px, $fontblue, bold, '');
+      }
+    }
+  }
+}
+

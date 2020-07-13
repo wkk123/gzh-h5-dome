@@ -1,0 +1,86 @@
+@import '@/assets/css/main.scss';
+@keyframes Chargings {
+  25%{
+    filter: hue-rotate(90deg);
+    box-shadow: 0 14px 28px rgba(0, 150, 136, 0.83), 0px 4px 10px rgba(9, 188, 215, 0.4);
+  }
+  50%{
+    filter: hue-rotate(60deg);
+    box-shadow: 0 14px 28px rgba(0, 150, 136, 0.83), 0px 4px 10px rgba(9, 188, 215, 0.4);
+  }
+  75%{
+    filter: hue-rotate(30deg);
+    box-shadow: 0 14px 28px rgba(4, 188, 213, .2), 0 10px 10px rgba(9, 188, 215, 0.08);
+  }
+  100%{
+    filter: hue-rotate(0deg);
+    box-shadow: 0 14px 28px rgba(4, 188, 213, .2), 0 10px 10px rgba(9, 188, 215, 0.08);
+  }
+}
+@keyframes move {
+  100% {
+    transform: translate(-50%, -110px) rotate(720deg);
+  }
+}
+.battery_container{
+  width: 80px;
+  margin:0;
+  position: relative;
+  .battery_box{
+    @include location(relative);
+    @include wh(80px,120px,$bg-color-base);
+    border-radius: 5px;
+    &::before{
+      content: '';
+      @include wh(20px,10px,$bg-color-base);
+      position: absolute;
+      top: -10px;
+      left: 30px;
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+      border-bottom-color: rgba(0, 0, 0, 0.32);
+    }
+    &::after{
+      content:"";
+      position:absolute;
+      bottom:0;
+      left:0;
+      top:0;
+      right:0;
+      background:linear-gradient(to bottom , #7abcff 0%, #00BCD4 50%, #2196F3 100%);
+      border-radius:0 0 5px 5px;
+      box-shadow: 0 14px 28px rgba(33, 150, 243, 0), 0 10px 10px rgba(9, 188, 215, 0.08);
+      filter:hue-rotate(120deg);
+      animation: Chargings 6s linear infinite;
+    }
+  }  
+  .ripple_box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    @include wh(80px,120px);
+    overflow: hidden;
+    .ripple_item {
+      @include wh(200px,200px);
+      position: absolute;
+      background: rgba(255, 255, 255, .8);
+      bottom: 5px;
+      left: 50%;
+      z-index: 1;
+      animation: move 6s linear infinite;
+    }
+    .ripple_item:nth-child(1) {
+      border-radius: 45% 47% 44% 42%;
+      transform: translate(-50%, 0) rotate(120deg);
+    }
+    .ripple_item:nth-child(2) {
+      border-radius: 38% 46% 43% 47%;
+      transform: translate(-50%, 0) rotate(135deg);
+
+    }
+    .ripple_item:nth-child(3) {
+      border-radius: 42% 46% 37% 40%;
+      transform: translate(-50%, 0) rotate(150deg);
+    }
+  }
+}

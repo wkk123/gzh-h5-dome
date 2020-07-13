@@ -1,0 +1,90 @@
+@import '@/assets/css/main.scss';
+.favorite_container{
+  @include location();
+  @include wh(100%,100%,$bg-base);
+}
+.favorite_list{
+  @include wh(100%,100%);
+  padding:15px;
+}
+.favorite_box{
+  @include wh(100%,auto,$bg-color-base);
+  @include mStyle(bottom,15px);
+  box-shadow:0px 0px 8px 0px rgba(63,136,251,0.2);
+  border-radius:6px;
+  overflow: hidden;
+  .favorite_btn{
+    @include wh(100%,45px);
+    @include bStyle(top);
+    @include sc(18px,$font-primary,500);
+    line-height:45px;
+  }
+}
+.favorite_info{
+  @include wh(100%,auto);
+  padding:15px;
+  .info_title{
+    @include wh(100%,auto);
+    @include flexStyle(row,space-between,center,'');
+    .title{
+      @include sc(16px,$font333,500);
+      @include pStyle(bottom,6px);
+    }
+    .info_fav{
+      @include wh(auto,auto);
+      @include flexStyle(column,flex-start,flex-end,'');
+      position: relative;
+    }
+    .title_fav{
+      @include wh(25px,25px);
+      @include flexStyle(row,space-around,center,'');
+      .fav_item{
+        @include wh(5px,5px,#9197A8);
+        border-radius: 50%;
+        overflow: hidden;
+      }
+    }
+    .fav_box{
+      @include wh(124px,auto);
+      position: absolute;
+      top:25px;
+      @include flexStyle(column,flex-start,flex-end,'');
+      &:hover{
+        .fav_info{
+          background-color: #D7DAE1;
+        }
+        .fav_info::before{
+          border-bottom-color: #D7DAE1;
+        }
+      }
+      .fav_info::before{
+        content:'';
+        @include wh(0px,0px);
+        border-left:calc(6px) solid transparent;
+        border-right:calc(6px) solid transparent;
+        border-bottom:6px solid $bg-color-base;
+        @include mStyle(right,8px);
+        position: absolute;
+        top: -6px;
+        right: 0;
+      }
+      .fav_info{
+        @include wh(100%,42px,$bg-color-base);
+        line-height: 42px;
+        @include sc(16px);
+        border-radius: 6px;
+        box-shadow:0px 0px 16px 0px rgba(42,45,51,0.2);
+      }
+    }
+  }
+  .info_Address{
+    @include sc(14px,$font999,400,left);
+    line-height: 20px;
+  }
+  .info_online{
+    @include sc(14px,$font-primary,400,left);
+    line-height: 20px;
+    @include pStyle(top,6px);
+    text-decoration: underline;
+  }
+}

@@ -1,0 +1,35 @@
+@import '@/assets/css/main.scss';
+.account {
+  @include location();
+  @include flexStyle(column,flex-start,center);
+  background-color: $bg-color-base;
+  .account_box{
+    @include wh(100%, auto);
+    padding: 30px 0 20px;
+    .account_item{
+      @include wh(100%,46px);
+      @include bStyle(bottom);
+      padding:0 30px;
+      .item_mobile{
+        @include wh(calc(100% - 90px),100%);
+        @include sc(18px, $font666, 400, left);
+      }
+      .item_code{
+        @include wh(90px, 100%);
+        @include sc(14px, $font999, 400, right);
+        &.countDown{
+          @include sc(14px, $font-primary, 400, right);
+        }
+      }
+      .item_input{
+        @include wh(100%,100%);
+        @include sc(18px,$font666,400,left);
+      }
+    }
+  }
+  .account_login{
+    @include wh(calc(100% - 60px), 46px, $fontblue);
+    border-radius: 23px;
+    @include sc(18px,$fontwhite);
+  }
+}

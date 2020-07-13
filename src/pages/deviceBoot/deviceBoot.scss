@@ -1,0 +1,310 @@
+@import '@/assets/css/main.scss';
+
+@keyframes rotation {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+.weui-mask {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.device_container {
+  @include wh(100vw, 100vh);
+  min-height: 100vh;
+}
+
+.device_box {
+  @include wh(100%, 100%, $bg-color-base);
+
+  .device_info {
+    @include wh(100%, auto);
+    padding: 15px;
+    box-shadow: 0px 6px 6px -6px rgba(63, 136, 251, 0.2);
+
+    .info_title {
+      @include wh(100%, auto);
+      @include flexStyle(row, space-between, center, '');
+
+      .title_center {
+        @include flexStyle(row, flex-start, center, '');
+        @include sc(16px);
+
+        .title_icon {
+          @include wh(2px, 16px, $bg-primary);
+          @include mStyle(right, 5px);
+          display: block;
+        }
+      }
+
+      .info_signal {
+        @include wh(auto, auto);
+        @include flexStyle(row, flex-end, flex-end, '');
+
+        @for $i from 1 through 5 {
+          .signal_item#{$i} {
+            @include wh(5px, calc(2px + 4px*#{$i}), $border1);
+            @include mStyle(left, 4px);
+            border-radius: 3px;
+          }
+        }
+
+        [class^="signal_item"] {
+          &.active {
+            background-color: $bg-primary;
+          }
+        }
+      }
+    }
+
+    .info_number {
+      @include wh(100%, auto);
+      @include sc(14px, $font999);
+      @include pStyle(top, 5px);
+      @include pStyle(left, 5px);
+      line-height: 20px;
+      @include flexStyle(row, space-between, center, '');
+
+      .info_btn {
+        @include wh(auto, 22px);
+        @include flexStyle(row, center, center, '');
+
+        .btn_collect,
+        .btn_refresh {
+          @include wh(22px, 22px);
+          @include mStyle(left, 20px);
+          background-size: 100%;
+        }
+
+        .btn_collect {
+          background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/collect1.png');
+
+          &.active {
+            background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/collect2.png');
+          }
+        }
+
+        .btn_refresh {
+          background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/refresh.png');
+
+          &.active {
+            -webkit-animation: rotation 1s steps(12, end) infinite;
+            animation: rotation 1s steps(12, end) infinite;
+          }
+        }
+      }
+    }
+  }
+
+  .port_box {
+    @include wh(100%, auto);
+    @include flexStyle(row, flex-start, flex-start, wrap);
+    box-shadow: 0px 6px 6px -6px rgba(63, 136, 251, 0.2);
+    @include pStyle(top, 15px);
+
+    .port_item {
+      box-sizing: border-box;
+      @include wh(calc(56px), calc(76px));
+      border: 1px solid $bg-primary;
+      border-radius: 6px;
+      overflow: hidden;
+      @include mStyle(left, 16px);
+      @include mStyle(bottom, 15px);
+      @include flexStyle(column, center, center, '');
+
+      &.active {
+        .item_explain {
+          color: $fontwhite;
+          border-top-color: $bg-primary;
+          background-color: $bg-primary;
+        }
+      }
+
+      &.charging {
+        .item_way {
+          color: $fontwhite;
+          background-color: $bg-primary;
+        }
+
+        .item_explain {
+          border-top-color: $bg-primary;
+        }
+      }
+
+      &.fault {
+        border-color: rgba(255, 19, 31, 0.55);
+
+        .item_way {
+          color: $fontwhite;
+          background-color: rgba(255, 19, 31, 0.55);
+        }
+
+        .item_explain {
+          border-top-color: rgba(255, 19, 31, 0.55);
+        }
+      }
+
+      &.occupy {
+        border-color: rgba(63, 136, 251, 0.55);
+
+        .item_way {
+          color: $fontwhite;
+          background-color: rgba(63, 136, 251, 0.55);
+        }
+
+        .item_explain {
+          border-top-color: rgba(63, 136, 251, 0.55);
+        }
+      }
+    }
+
+    .item_way {
+      @include wh(100%, calc(100% - 25px));
+      @include flexStyle(column, center, center, '');
+      @include sc(24px, $font-primary, 600);
+    }
+
+    .item_explain {
+      @include wh(100%, 25px);
+      @include flexStyle(row, center, center, '');
+      @include sc(10px, $font333, 500);
+      border-top: 1px solid rgba(63, 136, 251, 0.2);
+    }
+  }
+
+  .device_ways {
+    @include wh(100%, auto);
+    padding: 0 15px;
+    .ways_title {
+      @include wh(100%, 50px);
+      @include flexStyle(row, space-between, center, '');
+      @include bStyle(bottom);
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .title_info {
+        @include flexStyle(row, flex-start, center, '');
+        @include sc(16px, $font333);
+
+        .info_icon {
+          @include wh(16px, 16px);
+          @include mStyle(right, 5px);
+          display: block;
+          background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/hint.png');
+          background-size: 100%;
+        }
+      }
+
+      .ways_info {
+        @include sc(16px, $font999);
+      }
+    }
+
+    .ways_item {
+      @include wh(100%, 42px);
+      @include sc(16px, $font999);
+      line-height: 42px;
+      @include flexStyle(row, flex-start, center, '');
+
+    }
+  }
+  .powerWord_box{
+    @include wh(100%, auto);
+    .powerWord_item{
+      @include wh(100%, 42px);
+      @include sc(16px, $font999);
+      line-height: 42px;
+      @include flexStyle(row, space-between, center, '');
+    }
+  }
+
+  .popup_box {
+    @include wh(100%, auto, $bg-color-base);
+
+    .popup_hearde {
+      @include wh(100%, 48px);
+      @include bStyle(bottom);
+      @include flexStyle(row, space-between, center, '');
+      padding: 0 15px;
+
+      .hearde_tiem {
+        @include wh(22px, 22px);
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        &.close {
+          background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/close.png');
+        }
+
+        &.goBack {
+          background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/icon/goback.png');
+        }
+      }
+
+      .hearde_title {
+        @include sc(18px);
+      }
+    }
+
+    .popup_center {
+      @include wh(100%, auto);
+
+      .center_item {
+        @include wh(100%, auto);
+        @include flexStyle(row, space-between, center, '');
+        padding: 12px 15px;
+
+        .font3 {
+          @include sc(16px, $font333);
+        }
+
+        .font28 {
+          @include sc(28px, $font333, 500);
+        }
+
+        .font9 {
+          @include sc(16px, $font999);
+        }
+
+        .fontPrimary {
+          @include sc(16px, $font-primary);
+        }
+
+        .item_icon {
+          @include wh(22px, 22px);
+        }
+
+        .item_btn {
+          @include wh(92px, 38px, #D7DAE1);
+          line-height: 38px;
+          border-radius: 19px;
+          @include sc(18px, $fontwhite);
+
+          &.active {
+            background-color: $font-primary;
+          }
+        }
+
+        .item_text {
+          @include flexStyle(row, flex-end, center, '');
+        }
+
+        &.border {
+          @include bStyle();
+        }
+
+        &.bottom {
+          @include mStyle(top, 35px);
+          box-shadow: 0px 6px 6px 6px rgba(63, 136, 251, 0.2);
+        }
+      }
+    }
+  }
+}

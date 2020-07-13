@@ -1,0 +1,33 @@
+@import '@/assets/css/main.scss';
+.itemRecord{
+  @include wh(100%,auto,$bg-color-base);
+  @include bStyle(left,9px,$bg-primary);
+  border-radius: 6px;
+  @include mStyle(bottom,10px);
+  &:last-child{
+    @include mStyle(bottom,0px);
+  }
+  @include flexStyle(row,space-between,center,'');
+  padding: 15px 15px 15px 10px;
+  .Record_info{
+    @include wh(calc(100% - 80px));
+    @include flexStyle(column,space-between,flex-start,'');
+    .info_title{
+      @include sc(16px,$font333,500);
+      line-height: 22px;
+      @include pStyle(bottom,10px);
+    }
+    .info_time{
+      @include sc(14px,$font999,400);
+      line-height: 20px;
+    }
+  }
+  .Record_money{
+    @include wh(80px,auto);
+    @include sc(24px,$font333,500);
+    line-height: 34px;
+    &.active{
+      @include sc(24px,$font-primary,500);
+    }
+  }
+}

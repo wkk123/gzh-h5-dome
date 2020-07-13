@@ -1,0 +1,32 @@
+@import '@/assets/css/main.scss';
+.list_container{
+  @include wh(calc(100%),auto,$bg-color-base);
+  @include flexStyle(column,flex-start,flex-start,'');
+  padding: 0 15px;
+  .list_item{
+    @include wh(100%,50px);
+    @include sc(14px,$font333);
+    @include flexStyle(row,space-between,center,'');
+    &.border{
+      @include bStyle(top,1px,$border1);
+    }
+    &:first-child{
+      border: 0;
+    }
+    .item_box {
+      @include wh(100%,100%);
+      @include flexStyle(row,space-between,center,'');
+    }
+    .item_left{
+      @include wh(auto,100%);
+      @include flexStyle(row,center,center,'');
+      .left_text{
+        @include pStyle(left,5px);
+      }
+    }
+    .icon{
+      @include wh(20px,20px);
+      
+    }
+  }
+}

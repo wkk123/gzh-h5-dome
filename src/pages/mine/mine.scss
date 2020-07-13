@@ -1,0 +1,77 @@
+@import '@/assets/css/main.scss';
+.mine_container{
+  @include location();
+  @include wh(100%,calc(100% - 50px),$bg-color-base);
+  overflow-y: auto;
+}
+.mine_box {
+  @include wh(100%,auto);
+  background: linear-gradient(#767efe 50%, #fff 50%);
+  @include flexStyle(row);
+  padding: 15px;
+  .min_info{
+    @include wh(100%,auto,$bg-color-base);
+    @include flexStyle(column);
+    padding: 25px 15px;
+    border-radius: 10px;
+    box-shadow:0px 0px 8px 0px rgba(63,136,251,0.2);
+    overflow: hidden;
+  }
+}
+.info_user{
+  @include wh(100%,52px);
+  @include flexStyle(row,space-between);
+  @include mStyle(bottom,25px);
+  .user_box{
+    @include wh(auto,100%);
+    @include flexStyle(row,flex-start);
+    .user_profile{
+      @include wh(50px,50px);
+      border:1px solid $border;
+      border-radius: 50%;
+    }
+    .user_num{
+      @include wh(auto, 100%);
+      @include mStyle(left,10px);
+      @include flexStyle(column,space-between,flex-start);
+      .num_tel{
+        @include sc(20px,$font333,500);
+        line-height: 22px;
+      }
+      .num_money{
+        @include sc(18px,$font666,500);
+        line-height: 20px;
+      }
+      .num_unit{
+        @include sc(14px,$font666,500);
+        line-height: 20px;
+      }
+    }
+  }
+  .balance_btn{
+    @include wh(90px,34px);
+    @include sc(16px,$fontwhite);
+    @include flexStyle(column);
+    border-radius:17px;
+    background:linear-gradient(135deg,rgba(255,146,14,1) 0%,rgba(255,19,31,1) 100%);
+  }
+}
+.info_charging{
+  @include wh(100%);
+  @include flexStyle(row);
+  .charging_item{
+    @include flexStyle(column);
+    flex: 1;
+    .item_num{
+      @include sc(20px);
+      line-height: 28px;
+    }
+    .item_description{
+      @include sc(14px,$font999);
+      line-height: 18px;
+    }
+  }
+  .charging_item:first-child{
+    @include bStyle(right);
+  }
+}

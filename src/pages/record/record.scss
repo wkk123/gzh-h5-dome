@@ -1,0 +1,32 @@
+@import '@/assets/css/main.scss';
+.record_container{
+  @include location();
+  @include wh(100%,calc(100% - 50px),$bg-base);
+  &.active{
+    @include wh(100%,100%,$bg-base);
+  }
+  .nav_list{
+    @include wh(100%,44px,$bg-color-base);
+    @include flexStyle(row,flex-start,center);
+    .nav_item{
+      @include wh(auto,100%);
+      @include flexStyle(row);
+      @include sc(16px,$font999);
+      @include mStyle(left,15px);
+      @include bStyle(bottom,$bg-color-base);
+      &.active{
+        @include bStyle(bottom,$font333);
+        @include sc(16px,$font333);
+      }
+    }
+  }
+  .record_list {
+    @include wh(100%, 100%);
+    overflow-y: auto;
+    padding: 15px;
+    .item_center{
+      @include wh(100%,100%);
+      @include mStyle(bottom,8px);
+    }
+  }
+}

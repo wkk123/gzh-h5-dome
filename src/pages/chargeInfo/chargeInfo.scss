@@ -1,0 +1,169 @@
+@import '@/assets/css/main.scss';
+.chargeInfo_container{
+  @include wh(100vw,auto,$bg-color-base);
+  @include flexStyle(column,flex-start,center,'');
+  min-height: 100vh;
+  overflow-y:auto;
+  .container_center{
+    @include wh(100%,auto);
+    @include flexStyle(column,flex-start,center,'');
+  }
+  .chargeInfo_box{
+    @include wh(100%,auto);
+    min-height: 100%;
+    @include flexStyle(column,flex-start,center,'');
+  }
+  .chargeInfo_info{
+    @include wh(100%,auto);
+    padding: 0 30px;
+    @include pStyle(bottom,80px);
+    background:linear-gradient(314deg,rgba(137,122,255,1) 0%,rgba(63,136,251,1) 100%);
+    box-shadow:0px 0px 4px 0px rgba(0,0,0,0.1);
+    @include flexStyle(column,center,center,'');
+  }
+  .info_top{
+    @include wh(100%,auto);
+    @include flexStyle(row,space-between,center,'');
+    padding:15px 0;
+    line-height: 22px;
+    .font16{
+      @include sc(16px,$fontwhite);
+    }
+  }
+  .circle1{
+    @include wh(200px,200px,rgba(255,255,255,0.1));
+    @include flexStyle(row,center,center,'');
+    border-radius: 50%;
+    margin: 20px;
+  }
+  .info_circle{
+    @include wh(172px,172px,rgba(255,255,255,0.1));
+    @include flexStyle(row,center,center,'');
+    border-radius: 50%;
+    position: relative;
+  }
+  .circle_info{
+    @include wh(126px,126px);
+    border:1px solid $bg-color-base;
+    border-radius: 50%;
+    @include flexStyle(column,center,center,'');
+    position: absolute;
+    .font10{
+      @include wh(100%,auto);
+      @include sc(10px,$fontwhite);
+    }
+    .font22{
+      @include sc(22px,$fontwhite);
+      line-height: 50px;
+    }
+    .font24{
+      @include sc(24px,$fontwhite,500);
+    }
+  }
+  .circle_border{
+    @include wh(175px,175px);
+    @include flexStyle(row,center,center,'');
+    @include mStyle(top,-3px);
+    border-width: 6px;
+    border-style: solid;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: $bg-color-base;
+    border-radius: 50%;
+    transform:rotate(-45deg);
+    -webkit-transform:rotate(-45deg);  /*兼容-webkit-引擎浏览器*/
+    -moz-transform:rotate(-45deg);
+    &.border45{
+      border-top-color: $bg-color-base;
+    }
+    &.border90{
+      border-left-color: $bg-color-base;
+    }
+    &.border180{
+      border-bottom-color: $bg-color-base;
+    }
+    &.border360{
+      border-right-color: $bg-color-base;
+    }
+    &.finish {
+      border-color: $bg-color-base;
+    }
+    &.active{
+      -webkit-animation: rotate 3s linear infinite;
+      -moz-animation: rotate 3s linear infinite;
+      -o-animation: rotate 3s linear infinite;
+      animation: rotate 3s linear infinite;
+    }
+    .border_dot{
+      @include wh(20px,20px);
+      background:linear-gradient(180deg,rgba(255,146,14,1) 0%,rgba(255,19,31,1) 100%);
+      box-shadow:0px 0px 4px 0px rgba(0,0,0,0.2);
+      border: 4px solid $bg-color-base;
+      border-radius: 50%;
+      margin-right:-120px;
+      margin-top:-120px;
+    }  
+  }
+  .info_list{
+    @include wh(calc(100% - 30px),auto,$bg-color-base);
+    margin: -60px 15px 0;
+    padding:15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 8px 4px rgba(63,136,251,0.2);
+    .list_item{
+      @include flexStyle(row,space-between,center,'');
+      @include sc(16px);
+      line-height: 40px;
+      &.font14{
+        @include sc(14px,$font999);
+        .item_word{
+          @include sc(14px,$font999,400,right);
+        }
+      }
+      .item_word{
+        @include sc(16px,$font333,400,right);
+        @include wh(210px,auto);
+        line-height: 20px;
+        word-wrap:break-word
+      }
+    }
+  }
+  .chargeInfo_btn{
+    @include wh(100%,auto);
+    @include flexStyle(column,flex-start,center,'');
+    padding:20px 0 5px;
+    .btn_check{
+      @include wh(calc(100% - 70px),46px,$bg-primary);
+      box-sizing: border-box;
+      @include sc(18px,$fontwhite);
+      line-height: 46px;
+      border-radius: 23px;
+      margin:10px 0;
+      &.active{
+        border: 1px solid $bg-primary;
+        color: $font-primary;
+        background-color: $bg-color-base;
+        &:active{
+          background-color:rgba($color: $bg-primary, $alpha: 0.1);
+          border-color: rgba($color: $bg-primary, $alpha: 0.1);
+        }
+      }
+      &:active{
+        background-color:rgba($color: $bg-primary, $alpha: 0.75);
+      }
+    }  
+  }
+  @-webkit-keyframes rotate{from{-webkit-transform: rotate(0deg)}
+    to{-webkit-transform: rotate(360deg)}
+  }
+  @-moz-keyframes rotate{from{-moz-transform: rotate(0deg)}
+    to{-moz-transform: rotate(359deg)}
+  }
+  @-o-keyframes rotate{from{-o-transform: rotate(0deg)}
+    to{-o-transform: rotate(359deg)}
+  }
+  @keyframes rotate{from{transform: rotate(0deg)}
+    to{transform: rotate(359deg)}
+  }
+}

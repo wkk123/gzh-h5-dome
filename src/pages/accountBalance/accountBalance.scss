@@ -1,0 +1,30 @@
+@import '@/assets/css/main.scss';
+.accountBalance_container{
+  @include location();
+  .accountBalance_box{
+    @include wh(100%,100%,$bg-color-base);
+    @include flexStyle(column,space-between,center,'');
+    padding:15px;
+  }
+  .accountBalance_Balance{
+    @include wh(100%,184px);
+    background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/mine/balance.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    @include flexStyle(column,center,center,'');
+    .Balance_Num{
+      @include sc(40px,$fontwhite,500);
+    }
+    .Balance_text{
+      @include sc(14px,$fontwhite);
+    }
+  }
+  .accountBalance_btn{
+    @include wh(calc(100% - 40px),46px,$bg-primary);
+    border-radius: 23px;
+    @include flexStyle(row,center,center,'');
+    .btn{
+      @include sc(18px,$fontwhite);
+    }
+  }
+}

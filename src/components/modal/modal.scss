@@ -1,0 +1,72 @@
+@import '@/assets/css/main.scss';
+
+@keyframes tipMove{  // 动画效果
+  0% {transform: scale(0.2)}
+  // 25% { transform: scale(0.4)}
+  50% {transform: scale(0.6)}
+  // 75% {transform: scale(0.8)}
+  100% {transform: scale(1)}
+}
+.modal_container{  // 遮罩层
+  @include location(fixed);
+  z-index: 9900;
+  background-color:rgba(0, 0, 0, 0.32);
+  @include flexStyle(column,center,center,'');
+}
+.container_box {
+  // animation: tipMove .4s;
+  @include wh(270px, auto, $bg-color-base);
+  padding: 12px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  @include mStyle(bottom, 50px);
+  @include flexStyle(column, flex-start, center, '');
+
+  .modal_title {
+    @include sc(18px)
+  }
+
+  .modal_content {
+    @include wh(100%, auto);
+    @include flexStyle(column,flex-end,center,'');
+    padding:0 20px 18px;
+    min-height: 80px;
+    &.center{
+      @include flexStyle(column,center,center,'');
+    }
+    .center_input{
+      @include wh(100%,38px);
+      @include bStyle(bottom);
+      @include sc(16px,$font666);
+    }
+    .list_item{
+      @include sc(16px,$font666);
+      @include wh(230px,auto);
+      line-height: 22px;
+      .item_phone{
+        @include sc(16px,$bg-primary);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .modal_btn {
+    @include wh(100%, 38px);
+    @include flexStyle(row, space-between, center, '');
+    padding: 0 20px;
+    .btn_item {
+      @include wh(auto, 38px, #F0F0F0);
+      @include sc(16px, $font999);
+      border-radius: 19px;
+      flex: 1;
+      &.cancel{
+        @include mStyle(right,20px);
+      }
+      &.confirm {
+        @include wh(auto, 38px, $bg-primary);
+        @include sc(16px, $fontwhite);
+      }
+    }
+  }
+
+}

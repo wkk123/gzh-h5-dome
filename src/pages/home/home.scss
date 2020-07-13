@@ -1,0 +1,10 @@
+@import '@/assets/css/main.scss';
+.home_container{
+  @include location();
+  @include wh(100%,calc(100% - 50px),$bg-base);
+  overflow-y: auto;
+  .home_content{
+    @include wh(100%,100%);
+  }
+}
+

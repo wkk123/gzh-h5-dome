@@ -1,0 +1,22 @@
+@import '@/assets/css/main.scss';
+.card_list {
+  @include flexStyle(row,flex-start,center,wrap);
+  @include wh(100%,auto,$bg-color-base);
+  &.default{
+    min-height: 100px;
+  }
+  .list_item {
+    .item_box{
+      @include wh(100%,100px);
+      @include flexStyle(column,center,center,'');
+    }
+    .item_icon {
+      @include wh(38px,38px);
+      @include sc(12px,$font333,400);
+    }
+    .item_spac {
+      @include sc(12px,$font333,400);
+      line-height: 28px;
+    }
+  }
+}

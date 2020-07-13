@@ -1,0 +1,29 @@
+@import '@/assets/css/main.scss';
+.login{
+  @include location();
+  @include flexStyle(column,center,center);
+  .login_box{
+    @include flexStyle(column,center,center,'');
+    .login_info{
+      @include pStyle(bottom,30px);
+      @include flexStyle(column, center, center, '');
+      .info_img{
+        @include wh(88px,88px);
+      }
+      .info_title{
+        @include mStyle(top,32px);
+        @include sc(20px,$font333,500);
+      }
+    }
+    .login_btn{
+      @include flexStyle(column, center, center, '');
+      .btn_item{
+        @include wh(300px,46px,$bg-primary);
+        border-radius: 23px;
+        @include sc(18px,$fontwhite,400);
+        line-height: 46px;
+        @include mStyle(bottom,15px);
+      }
+    }
+  }
+}

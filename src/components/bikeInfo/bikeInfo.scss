@@ -1,0 +1,14 @@
+@import '@/assets/css/main.scss';
+.chargeInfo_six{
+  @include wh(100%,auto);
+  @include sc(12px,$font999);
+  padding:0px 0 15px;
+}
+.circle_text{
+  @include wh(120px,80px);
+  @include flexStyle(column,flex-end,center,'');
+}
+.font12{
+  @include sc(12px,$fontwhite);
+  padding-top:5px;
+}

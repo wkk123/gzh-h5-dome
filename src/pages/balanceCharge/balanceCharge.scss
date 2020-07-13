@@ -1,0 +1,30 @@
+@import '@/assets/css/main.scss';
+.balanceCharge_container{
+  @include location();
+  .balanceCharge_box{
+    @include wh(100%,100%,$bg-color-base);
+    @include flexStyle(column,space-between,center,'');
+    padding:15px;
+    .balanceCharge_info{
+      @include flexStyle(column,flex-start,flex-start,'');
+    }
+  }
+  .Balance_title{
+    @include sc(16px);
+    padding: 10px 0;
+  }
+  .balanceCharge_Balance{
+    @include wh(100%,auto);
+    border:1px solid $border;
+    border-radius: 10px;
+    @include pStyle(top,15px);
+  }
+  .balanceCharge_btn{
+    @include wh(calc(100% - 40px),46px,$bg-primary);
+    border-radius: 23px;
+    @include flexStyle(row,center,center,'');
+    .btn{
+      @include sc(18px,$fontwhite);
+    }
+  }
+}

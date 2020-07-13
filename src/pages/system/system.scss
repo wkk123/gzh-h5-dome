@@ -1,0 +1,14 @@
+@import '@/assets/css/main.scss';
+.system_container{
+  @include wh(100vw,auto,$bg-color-base);
+  min-height: 100vh;
+  padding: 0 15px;
+  @include flexStyle(column,flex-end,center,'');
+  .system_logOut{
+    @include wh(calc(100% - 40px),46px,$bg-primary);
+    @include sc(18px,$fontwhite);
+    border-radius: 23px;
+    line-height: 46px;
+    margin: 68px 20px 68px;
+  }
+}

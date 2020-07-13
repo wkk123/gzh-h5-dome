@@ -1,0 +1,42 @@
+@import '@/assets/css/main.scss';
+.deviceOpen_container{
+  @include location();
+  .deviceOpen_box{
+    @include wh(100%,100%,$bg-color-base);
+    @include pStyle(bottom,20px);
+    @include flexStyle(column,space-between,center,'');
+  }
+  .deviceOpen_info{
+    @include wh(100%,auto);
+    @include flexStyle(column,flex-start,center,'');
+    @include pStyle(top,64px);
+    .info_item{
+      padding:8px 0;
+    }
+    .info_icon{
+      @include wh(52px,52px);
+    }
+    .font16{
+      @include sc(16px,$font999);
+    }
+    .font20{
+      @include sc(20px);
+    }
+    .font24{
+      @include sc(24px,$font333,500);
+    }
+    .p10{
+      padding:0 10px;
+    }
+  }
+  .deviceOpen_btn{
+    @include wh(100%,auto);
+    @include flexStyle(row,center,center,'');
+    .btn_check{
+      @include wh(calc(100% - 75px),46px,$bg-primary);
+      @include sc(18px,$fontwhite);
+      line-height: 46px;
+      border-radius: 23px;
+    }
+  }
+}

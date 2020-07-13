@@ -1,0 +1,18 @@
+@import '@/assets/css/main.scss';
+.money_list{
+  @include wh(100%,auto);
+  @include flexStyle(row,flex-start,flex-start,wrap);
+  padding-right:15px;
+  .list_item{
+    @include wh(calc(100%/3 - 15px),48px);
+    line-height: 48px;
+    border:1px solid $bg-primary;
+    @include sc(16px,$font-primary);
+    margin:0px 0px 10px 15px;
+    border-radius: 10px;
+    &.active{
+      background-color:$bg-primary;
+      color:$fontwhite;
+    }
+  }
+}

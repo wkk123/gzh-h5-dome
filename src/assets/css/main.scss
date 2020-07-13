@@ -1,0 +1,126 @@
+// @import './base.scss';
+$font-primary : #3F88FB;
+$fontwhite : #fff;
+$fonterror : #FF131F;
+$fontblue : #409EFF;
+
+$font333 : #333;
+$font666 : #666;
+$font888 : #888;
+$font999 : #999;
+
+$subtitle : #606266;
+
+$border : #F7F7F7;
+$border1: #F9F9F9;
+
+// 背景颜色
+$bg-color-base : #fff;
+$bg-base : #F9F9F9;
+$bg-grey : #f7f7f7;
+$bg-primary : #3F88FB;
+$bg-chunk : #e0e0e0;
+
+
+$common-left: 0.2rem;
+$common-right: 0.6rem;
+
+
+
+// 元素长宽
+@mixin wh($width:auto, $height:auto, $bgcolor:transparent) {
+  width: $width;
+  height: $height;
+  background-color: $bgcolor;
+}
+
+// 字体颜色,大小, 水平布局
+@mixin sc($size: 12px, $color: $font333, $weight: 400, $text-align: center) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+  text-align: $text-align;
+}
+
+@mixin flexStyle($a:row, $b:center, $c:center, $d:nowrap) {
+  display: flex;
+  flex-direction: $a; //决定项目的排布方向
+  justify-content: $b;
+  align-items: $c;
+  flex-wrap: $d; // wrap
+  display: -webkit-flex;
+  /* Safari */
+  display: -moz-box;
+  display: -ms-flexbox;
+  -ms-flex-direction: $a;
+  -webkit-flex-direction: $a;
+  -o-flex-direction: $a;
+  -moz-flex-direction: $a;
+  -webkit-justify-content: $b;
+  -moz-box-pack: $b;
+  -webkit--moz-box-pack: $b;
+  -webkit-align-items: $c;
+  box-align: $c;
+  -moz-box-align: $c;
+  -webkit-box-align: $c;
+  -webkit-flex-wrap: $d;
+  -moz-flex-wrap: $d;
+  -ms-align-content: center; //纵轴上的对齐方式 多列有用
+  -webkit-align-content: center;
+  -o-align-content: center;
+  -moz-align-content: center;
+  align-content: center;
+}
+
+@mixin location($position: absolute, $top: 0, $right: 0, $bottom:0, $left: 0) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+// 默认按照父元素的剧中
+@mixin positionCenter($position: absolute) {
+  position: $position;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+// 默认按照父元素的剧中
+@mixin positionHCenter($position: absolute) {
+  position: $position;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+}
+
+@mixin positionLeft($position: absolute, $left: $common-left) {
+  position: $position;
+  top: 50%;
+  left: $left;
+  transform: translate3d(0, -50%, 0);
+}
+
+@mixin positionRight($position: absolute, $right: $common-right) {
+  position: $position;
+  top: 50%;
+  right: $right;
+  transform: translate3d(0, -50%, 0);
+}
+
+
+//direction 方向 pixel 宽度 bstyle border-Style color 颜色
+@mixin bStyle($direction : bottom, $color: $border, $pixel:1px, $bstyle:solid) {
+  border-#{$direction}: $pixel $bstyle $color;
+}
+
+@mixin pStyle($direction :right, $pixel:10px) {
+  padding-#{$direction}: $pixel;
+}
+
+@mixin mStyle($direction : right, $pixel:10px) {
+  margin-#{$direction}: $pixel;
+}
+
+

@@ -1,0 +1,63 @@
+@import '@/assets/css/main.scss';
+.online_card {
+  @include wh(calc(100% - 2px),auto);
+  border:1px solid #8D4AFC;
+  border-radius: 8px;
+  overflow: hidden;
+  @include mStyle(bottom,10px);
+  .card_info{
+    @include wh(100%,100px);
+    background-image: url('https://changchong.oss-cn-hangzhou.aliyuncs.com/gzh/mine/card.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10px 15px;
+    @include flexStyle(column,space-between,center,'');
+    .info_top{
+      @include wh(100%,auto);
+      @include flexStyle(row,space-between,center,'');
+    }
+    .info_center{
+      @include wh(100%,auto);
+      @include flexStyle(row,center,center,'');
+      @include sc(10px,$fontwhite);
+    }
+    .info_bottom{
+      @include wh(100%,16px);
+      @include flexStyle(row,space-between,center,'');
+    }
+    &.info_noData{
+      @include flexStyle(column,center,center,'');
+    }
+    .info_icon{
+      @include wh(14px,14px);
+    }
+    .font12{
+      @include sc(12px,$fontwhite);
+    }
+    .font14{
+      @include sc(14px,$fontwhite,600);
+    }
+    .font28{
+      @include sc(28px,$fontwhite,500);
+      padding:0 5px;
+    }
+    .btn1{
+      @include wh(64px,28px,$bg-color-base);
+      border-radius: 17px;
+      @include sc(14px,#FF131F,500);
+    }
+    .btn2{
+      @include sc(12px,$fontwhite);
+      text-decoration: underline;
+    }
+    .btn3{
+      @include flexStyle(row,center,center,'');
+    }
+  }
+  .card_Num{
+    @include wh(100%,18px);
+    display: block;
+    @include sc(12px);
+    line-height: 18px;
+  }
+}

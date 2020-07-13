@@ -1,0 +1,7 @@
+@import '@/assets/css/main.scss';
+.list_box{
+  @include location();
+  @include wh(100%,100%);
+  padding: 15px;
+  overflow-y: auto;
+}

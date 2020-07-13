@@ -1,0 +1,27 @@
+@import '@/assets/css/main.scss';
+.richScan_container{
+  @include flexStyle(column);
+  @include sc(16px,$bg-primary,400);
+  @include wh(100%,calc(100% - 174px - 100px),$bg-base);
+  min-height: 200px;
+  max-height: 100%;
+  padding:20px;
+  .richScan_btn {
+    @include wh(182px, 182px,$bg-primary);
+    @include flexStyle(column,center,center,'');
+    border-radius: 50%;
+    .btn_img {
+      @include wh(68px,68px);
+    }
+    .btn_text{
+      @include sc(20px,$fontwhite);
+    }
+  }
+  .richScan_text {
+    @include pStyle(top,12px);
+    @include sc(16px,$bg-primary,400);
+    @include wh(auto,auto);
+    border: none;
+    outline: none;
+  }
+}

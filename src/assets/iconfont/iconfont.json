@@ -1,0 +1,93 @@
+{
+  "id": "1818935",
+  "name": "H5小程序",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "14716189",
+      "name": "chongzhi",
+      "font_class": "chongzhi",
+      "unicode": "e615",
+      "unicode_decimal": 58901
+    },
+    {
+      "icon_id": "14716190",
+      "name": "kefu",
+      "font_class": "kefu",
+      "unicode": "e616",
+      "unicode_decimal": 58902
+    },
+    {
+      "icon_id": "14716191",
+      "name": "kabao",
+      "font_class": "kabao",
+      "unicode": "e617",
+      "unicode_decimal": 58903
+    },
+    {
+      "icon_id": "14716192",
+      "name": "jiaoyijilu",
+      "font_class": "jiaoyijilu",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    },
+    {
+      "icon_id": "14716193",
+      "name": "qiabao",
+      "font_class": "qiabao",
+      "unicode": "e619",
+      "unicode_decimal": 58905
+    },
+    {
+      "icon_id": "14716194",
+      "name": "chongdianjilu",
+      "font_class": "chongdianjilu",
+      "unicode": "e61a",
+      "unicode_decimal": 58906
+    },
+    {
+      "icon_id": "14716195",
+      "name": "shoucang",
+      "font_class": "shoucang",
+      "unicode": "e61b",
+      "unicode_decimal": 58907
+    },
+    {
+      "icon_id": "14716196",
+      "name": "shouye",
+      "font_class": "shouye",
+      "unicode": "e61c",
+      "unicode_decimal": 58908
+    },
+    {
+      "icon_id": "14716197",
+      "name": "zaixianka",
+      "font_class": "zaixianka",
+      "unicode": "e61d",
+      "unicode_decimal": 58909
+    },
+    {
+      "icon_id": "14716198",
+      "name": "zhandian-2",
+      "font_class": "zhandian-2",
+      "unicode": "e61e",
+      "unicode_decimal": 58910
+    },
+    {
+      "icon_id": "14716199",
+      "name": "wode",
+      "font_class": "wode",
+      "unicode": "e61f",
+      "unicode_decimal": 58911
+    },
+    {
+      "icon_id": "14716200",
+      "name": "shezhi",
+      "font_class": "shezhi",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    }
+  ]
+}
