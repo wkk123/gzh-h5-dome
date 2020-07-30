@@ -83,15 +83,15 @@
     "extends": "react-app",
     "globals": {
       "memberBaseUrl": true,
-      "trainBaseUrl":true,
-      "flightBaseUrl":true,
-      "hotelBaseUrl":true,
-      "clientHeight":true,
-      "clientWidth":true,
-      "isAndroid":true,
-      "isWeixin":true,
-      "WeixinJSBridge" : true,
-      "onBridgeRaady":true
+      "trainBaseUrl": true,
+      "flightBaseUrl": true,
+      "hotelBaseUrl": true,
+      "clientHeight": true,
+      "clientWidth": true,
+      "isAndroid": true,
+      "isWeixin": true,
+      "WeixinJSBridge": true,
+      "onBridgeRaady": true
     }
   },
   "browserslist": {

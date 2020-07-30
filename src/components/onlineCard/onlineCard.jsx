@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { imgUrl } from '@/config';
 import { Modal } from '@/components';
-// import { userBind, userUnbind } from '@/api/api';
 import './onlineCard.scss';
 
 export default class onlineCard extends Component {
